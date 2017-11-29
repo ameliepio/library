@@ -94,6 +94,24 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+img{
+display: flex;
+justify-content: center;
+max-width:100%;
+height:auto;
+display: block;
+}
+table{
+width:100%;
+
+
+}
+
+
+
+
+
+
 
 
 
