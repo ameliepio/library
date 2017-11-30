@@ -3,14 +3,20 @@
 //this can be something close to a routing system
 
 
- // function chargerClasse($classe)
- // {
- //     if ($classe == 'ArticlesManager') {
- //         require 'Model/' . $classe . '.php';
- //     } else {
- //         require 'Model/entities/' . $classe . '.php'; // On inclut la classe correspondante au paramètre passé.
- //     }
- // }
- // spl_autoload_register('chargerClasse'); // On enregistre la fonction en autoload pour qu'elle soit appelée dès qu'on instanciera une classe non déclarée.
- require 'model/connexion.php';
- require 'controller/index.php';
+
+  // On inclut la connexion à la DB, l'autoloader  et on crée l'objet $manager
+  // Chargement automatique des classes
+  function chargerClasse($classname){
+    if ($classname = "BooksManager") {
+      require_once 'model/' . $classname . '.php';
+    } else {
+      require 'entities/' . $classname . '.php';
+    }
+
+  }
+  spl_autoload_register('chargerClasse');
+
+require ('model/connexion.php');
+
+
+require ('controllers/index.php');

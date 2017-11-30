@@ -96,17 +96,21 @@ textarea {
    ========================================================================== */
 img{
 display: flex;
-justify-content: center;
+justify-content:center;
 max-width:100%;
 height:auto;
-display: block;
+display:block;
 }
 table{
 width:100%;
 
+}
+.form1{
+margin-left:12px;
+width: 50%;
+
 
 }
-
 
 
 

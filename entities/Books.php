@@ -3,6 +3,7 @@
 class Books
 {
     private $id;
+    private $books;
     private $NameBooks;
     private $author;
     private $category;
@@ -76,7 +77,7 @@ class Books
      * Set the value of Name Books
      *
      * @param mixed NameBooks
-     *
+     *l
      * @return self
      */
     public function setNameBooks($NameBooks)
@@ -94,7 +95,7 @@ if (is_string($NameBooks)&& strlen($NameBooks)<= 50)
      *
      * @return mixed
      */
-    public function getAuthor()
+    public function getAuthors()
     {
         return $this->author;
     }
@@ -122,7 +123,7 @@ if (is_string($author)&& strlen($author)<= 100)
      *
      * @return mixed
      */
-    public function getCategory()
+    public function getCategories()
     {
         return $this->category;
     }
