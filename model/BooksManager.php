@@ -1,5 +1,5 @@
 <?php
-require 'entities/Books.php';
+// require 'entities/Books.php';
 class BooksManager
 {
 
@@ -16,10 +16,10 @@ class BooksManager
 
   public function getBooks(){
 
-    $donnees=$this->db->query('SELECT * FROM Books');
-    $books=$donnees->fetchAll(PDO::FETCH_ASSOC);
+    $req=$this->db->query('SELECT * FROM Books');
+    $books=$req->fetchAll(PDO::FETCH_ASSOC);
     foreach ($books as $key => $value) {
-      $books[$key]= new Books ($value);
+    $books[$key]= new Books ($value);
     }
     return $books;
   }
@@ -27,31 +27,32 @@ class BooksManager
   //request to see just one book
 
   public function getBook($id){
-    $donnees=$this->db->prepare('SELECT * FROM Books WHERE id=:id');
-    $donnees->execute(array(
+    $req=$this->db->prepare('SELECT * FROM Books WHERE id=:id');
+    $req->execute(array(
       ':id'=>$id
     ));
-    $book=$donnees->fetch(PDO::FETCH_ASSOC);
+    $book=$req->fetch(PDO::FETCH_ASSOC);
     $book= new Books($book);
     return $book;
   }
 
 // request to add an book
-      public function add($books){
-        $req =$db->prepare('INSERT INTO Books (NameBooks,author,category,releaseDate,idUser) VALUES (:NameBooks,:author,:category,:releaseDate,:idUser)');
+      public function addBooks($books){
+        $req=$this->db->prepare('INSERT INTO Books (NameBooks,author,category,abstract,releaseDate,idUser) VALUES (:NameBooks,:author,:category,:abstract,:releaseDate,:idUser)');
 
         // We store the values ​​of the object in the DB
         // On enregistre les valeurs de l'objet dans la DB
         $req->bindValue(':NameBooks',$books->getNameBooks());
-        $req->bindValue(':author', $books->getAuthor());
-        $req->bindValue(':category', $books->getCategory());
+        $req->bindValue(':author', $books->getAuthors());
+        $req->bindValue(':category', $books->getCategories());
+        $req->bindValue(':abstract', $books->getAbstract());
         $req->bindValue(':releaseDate',$books->getReleaseDate());
         $req->bindValue(':idUser', $books->getIdUser());
+        
         $req->execute();
+
+          // header("location:indexVue.php");
       }
-
-
-
 
       public function getDb()
         {

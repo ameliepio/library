@@ -2,14 +2,14 @@
 
 class Books
 {
-    private $id;
-    private $books;
-    private $NameBooks;
-    private $author;
-    private $category;
-    private $abstract;
-    private $releaseDate;
-    private $idUser;
+    protected $id;
+    protected $books;
+    protected $NameBooks;
+    protected $author;
+    protected $category;
+    protected $abstract;
+    protected $releaseDate;
+    protected $idUser;
     /**
      * Article constructor.
      * @param $donnees

@@ -20,6 +20,6 @@
 <div class=" container .col-xs-4 .col-sm-6">
 
 
-  <img class=img-responsive src=../assets/img/biblio.jpg>
+  <img class=img-responsive src=assets/img/biblio.jpg>
 
 </div>
