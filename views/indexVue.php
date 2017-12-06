@@ -6,7 +6,7 @@
  <div id="main" class="container-fluid">
      <h3 class="page-header"></h3>
 
- <form class="" action="index.php" method="post" name: 'addBooks'>
+ <form class="" action="index.php" method="post" name='addBooks'>
          <div id="actions">
              <div class="col-md-3">
 
@@ -21,7 +21,26 @@
                  <tr>
                      <th>NameBooks</th>
                      <th>Authors</th>
-                     <th>Categories</th>
+                     <th>
+
+ <form action="index.php" method="post">
+ <div class="dropdown" >
+
+ <select class="form-control" name="sortCategories">
+   <option value="autobiography">Autobiography</option>
+   <option value="action">Action</option>
+   <option value="policy">Policy</option>
+   <option value="Manga">Manga</option>
+   <option value="History">History</option>
+   <option value="blabla">blabla</option>
+ </select>
+
+ </div>
+
+  <input type="submit" name ="send"/>
+
+ </form>
+                </th>
                      <th>Action</th>
                     <th >idUser</th>
 
@@ -38,6 +57,9 @@
                          <td><?php echo $book->getAuthors();?></td>
                          <td><?php echo $book->getCategories();?></td>
                          <td><?php echo $book->getIdUser();?></td>
+
+
+
                          <td class="row .col-xs-4 .col-sm-6">
 
 
@@ -50,6 +72,7 @@
                      <?php
                  }
                  ?>
+
 
              </tbody>
           </table>

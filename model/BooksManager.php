@@ -48,10 +48,24 @@ class BooksManager
         $req->bindValue(':abstract', $books->getAbstract());
         $req->bindValue(':releaseDate',$books->getReleaseDate());
         $req->bindValue(':idUser', $books->getIdUser());
-        
+
         $req->execute();
 
           // header("location:indexVue.php");
+      }
+
+
+public function sortCategories($category){
+$req=$this->db->prepare('SELECT * FROM Books WHERE category=?');
+
+$req->execute([$category]);
+
+$books=$req->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($books as $key => $value) {
+$books[$key]= new Books ($value);
+}
+return $books;
       }
 
       public function getDb()
