@@ -1,3 +1,7 @@
+Library Manager1) Creation of an application that allows a librarian to manage his book catalog as well as loans and returns.
+
+
+
 # [Bootstrap](http://getbootstrap.com)
 
 [![Slack](https://bootstrap-slack.herokuapp.com/badge.svg)](https://bootstrap-slack.herokuapp.com)
