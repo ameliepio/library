@@ -11,9 +11,13 @@
              <div class="col-md-3">
 
 
-                 <a href="controllers/addBooks.php" class="btn btn-outline-success">addBooks</a>
+<a href="controllers/addBooks.php" class="btn btn-outline-success">addBooks</a>
+<a href="controllers/user.php" class="btn btn-outline-success">user</a>
+
+
              </div>
          </div>
+
          <div id="list" class="row">
      <div class="table-responsive col-xs-8 .col-sm-6  ">
          <table class="table table-striped" cellspacing="0" cellpadding="0">
@@ -27,6 +31,7 @@
  <div class="dropdown" >
 
  <select class="form-control" name="sortCategories">
+   <option value="autobiography">categories</option>
    <option value="autobiography">Autobiography</option>
    <option value="action">Action</option>
    <option value="policy">Policy</option>
@@ -41,8 +46,9 @@
 
  </form>
                 </th>
-                     <th>Action</th>
-                    <th >idUser</th>
+                     <th >idUser</th>
+
+                     <th >statut</th>
 
                      </tr>
              </thead>
@@ -62,10 +68,11 @@
 
                          <td class="row .col-xs-4 .col-sm-6">
 
-
+<div class="button">
 
 <a class="btn btn-outline-info" href="controllers/read.php?id=<?php echo $book->getId()?>">read</a>
 
+</div>
                      </tr>
 
 
@@ -73,12 +80,14 @@
                  }
                  ?>
 
-
              </tbody>
           </table>
   </div>
+  <a class="btn btn-outline-info" href="controllers/user.php?id=<?php echo $user->getId()?>">user</a>
   </form>
   </div>
+
+
 
  <?php
    include("template/footer.php")
